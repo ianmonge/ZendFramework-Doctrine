@@ -2,9 +2,9 @@
  
 /**
  * @Entity
- * @Table(name="test123")
+ * @Table(name="project")
  */
-class Default_Model_Test
+class Default_Model_Project
 {
     /**
      * @Id @Column(type="integer")

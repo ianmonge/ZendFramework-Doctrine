@@ -2,15 +2,28 @@
 
 class IndexController extends Zend_Controller_Action
 {
+//    public function init()
+//    {
+//        /* Initialize action controller here */
+//    }
+//
+//    public function indexAction()
+//    {
+//        // action body
+//    }
 
     public function init()
     {
-        /* Initialize action controller here */
+        $registry = Zend_Registry::getInstance();
+        $this->_em = $registry->entitymanager;
     }
-
+ 
     public function indexAction()
     {
-        // action body
+        $projectEntity = new Default_Model_Project;
+        $projectEntity->setName('Zaphod Beeblebrox');
+        $this->_em->persist($projectEntity);
+        $this->_em->flush();
     }
 
 
